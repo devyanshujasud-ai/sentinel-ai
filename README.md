@@ -74,3 +74,51 @@ Sentinel AI deploys specialized, high-accuracy threat detectors running concurre
 6. **Toxicity & Harassment Detector**: Screens out hate speech, explicit categories, and harassing remarks.
 7. **Unsafe Code Detector**: Identifies potentially malicious script blocks or execution directives (`eval()`, `exec()`).
 8. **Role Manipulation Detector**: Protects agent personas from hostile takeover attempts (e.g., *"You are now my hacker assistant"*).
+
+
+## 🛠️ Technology Stack
+
+### Backend API
+* **Core**: Python 3.10+, FastAPI (Asynchronous execution model)
+* **Database Client**: Motor (Async MongoDB ODM)
+* **Authentication**: JWT (python-jose & passlib with bcrypt)
+* **Rate Limiting**: Slowapi (Token bucket algorithm)
+* **Configuration**: Pydantic Settings v2
+
+### Frontend Dashboard
+* **Core**: React 19, TypeScript
+* **Router**: TanStack Router (Typesafe routing & state transitions)
+* **Build Tool**: Vite 7
+* **Styling**: Tailwind CSS v4, Framer Motion
+* **Charts**: Recharts (Interactive SVG graphs)
+
+---
+
+## 📁 Repository Directory Structure
+
+```
+sentinel-ai/
+├── backend/                   # 🐍 FastAPI Backend API
+│   ├── app/
+│   │   ├── api/               # API Router and endpoint route handlers
+│   │   ├── auth/              # JWT Dependency validation
+│   │   ├── core/              # Global settings configuration
+│   │   ├── database/          # MongoDB connection and index logic
+│   │   ├── detection/         # Hybrid Prompt Firewall detection modules
+│   │   ├── middleware/        # CORS, logging, and rate limiters
+│   │   ├── models/            # ODM database schemas
+│   │   └── services/          # Business logic: scan orchestrator, analytics
+│   ├── main.py                # Server entrypoint
+│   └── requirements.txt       # Python dependencies list
+│
+├── ai-fortress-frontend/     # ⚛️ React & Tailwind Dashboard
+│   ├── src/
+│   │   ├── components/        # UI and App specific layout blocks
+│   │   ├── hooks/             # Custom utility hooks (useMobile)
+│   │   ├── lib/               # Global state, axios client, error hooks
+│   │   └── routes/            # TanStack Router page views
+│   ├── vite.config.ts         # Vite bundler options
+│   └── wrangler.jsonc         # Cloudflare Workers configuration
+│
+└── docker-compose.yml         # Container Orchestration Manifest
+```
