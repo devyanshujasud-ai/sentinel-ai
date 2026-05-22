@@ -21,3 +21,42 @@ Sentinel AI is a high-performance, enterprise-grade **Prompt Firewall & Threat D
 * **Intelligent Risk Scoring**: Computes a dynamic risk score from 0-100 to classify prompt safety (LOW, MEDIUM, HIGH, CRITICAL).
 * **Automatic Prompt Sanitizer**: Automatically strips matching threat segments and replaces them with clean `[SUSPICIOUS CONTENT REMOVED]` markers.
 * **Interactive Analytics Dashboard**: Beautiful real-time telemetry charts tracking scan history, threat distributions, and attack rates.
+
+
+## 🏗️ System Architecture & Request Flow
+
+The diagram below details the end-to-end telemetry pathway when a client application submits a prompt for scanning:
+
+```mermaid
+sequenceDiagram
+    participant User as 👤 Client / Browser
+    participant Gateway as 🛡️ Sentinel API (FastAPI)
+    participant Engine as ⚙️ Detection Engine
+    participant DB as 🍃 MongoDB (Database)
+    participant LLM as 🤖 Target LLM (ChatGPT/Gemini)
+
+    User->>Gateway: Submit Prompt (POST /api/v1/scan)
+    Gateway->>Gateway: Verify JWT Session & Rate Limits
+    Gateway->>Engine: Run engine.analyze(prompt)
+    
+    par Run Heuristics in Parallel
+        Engine->>Engine: Heuristics 1-8 (Injection, Leakage, SQL, Toxicity, etc.)
+    and Run AI Verification
+        Engine->>Engine: Fetch AI Moderation (Local / OpenAI / Gemini)
+    end
+
+    Engine->>Engine: Apply Consensus Confidence Boosting
+    Engine->>Engine: Calculate Risk Score (0-100) & Severity
+    Engine->>Engine: Sanitize threat segments
+    Engine->>Gateway: Return Structured Threat Result
+
+    Gateway->>DB: Save Scan Record & Daily Analytics Increments
+    Gateway->>DB: Increment User Stats (Total Scans / Blocked Alerts)
+    
+    alt Prompt is SAFE
+        Gateway-->>User: Return clean prompt + metadata
+        User->>LLM: Forward clean prompt with confidence
+    else Prompt is DANGEROUS
+        Gateway-->>User: Return Blocked warning + Sanitized prompt + Explanations
+    end
+```
