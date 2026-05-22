@@ -1,0 +1,50 @@
+# ============================================
+# SENTINEL AI — Full Stack Docker Compose
+# ============================================
+version: "3.8"
+
+services:
+  # Database Service
+  mongodb:
+    image: mongo:6.0
+    container_name: sentinel_mongodb
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb_data:/data/db
+    networks:
+      - sentinel_network
+    restart: always
+
+  # Backend Service
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: sentinel_backend
+    ports:
+      - "8000:8000"
+    environment:
+      - MONGODB_URI=mongodb://mongodb:27017
+      - DB_NAME=sentinel_ai
+      - JWT_SECRET=sentinel-prod-secret-replace-in-real-prod
+      - JWT_ALGORITHM=HS256
+      - JWT_EXPIRY_MINUTES=1440
+      - RATE_LIMIT_PER_MINUTE=60
+      - API_VERSION=v1
+      - APP_ENV=production
+      - ALLOWED_ORIGINS=*
+      - USE_AI_MODERATION=true
+      - AI_PROVIDER=local
+    depends_on:
+      - mongodb
+    networks:
+      - sentinel_network
+    restart: always
+
+networks:
+  sentinel_network:
+    driver: bridge
+
+volumes:
+  mongodb_data:
