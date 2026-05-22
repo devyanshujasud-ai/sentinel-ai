@@ -122,3 +122,46 @@ sentinel-ai/
 │
 └── docker-compose.yml         # Container Orchestration Manifest
 ```
+
+
+## 🚀 Local Development Quickstart
+
+### Prerequisites
+* Python 3.10+
+* Node.js 18+ & npm/bun
+* MongoDB (running on `mongodb://localhost:27017`)
+
+### 1. Run the Backend API
+1. Navigate to the backend directory:
+   ```bash
+   cd backend
+   ```
+2. Set up a virtual environment and install packages:
+   ```bash
+   python -m venv venv
+   .\\venv\\Scripts\\activate  # On Windows
+   source venv/bin/activate  # On Unix/macOS
+   pip install -r requirements.txt
+   ```
+3. Configure your environment in `.env` (Optional: add Gemini/OpenAI API keys for cloud augmentation):
+   ```env
+   MONGODB_URI=mongodb://localhost:27017
+   DB_NAME=sentinel_ai
+   JWT_SECRET=change-this-in-production
+   ```
+4. Start the development server:
+   ```bash
+   uvicorn main:app --reload --port 8000
+   ```
+
+### 2. Run the Frontend Dashboard
+1. Navigate to the frontend directory:
+   ```bash
+   cd ../ai-fortress-frontend
+   ```
+2. Install dependencies and start the app:
+   ```bash
+   npm install
+   npm run dev
+   ```
+3. Open `http://localhost:8080` in your web browser.
