@@ -1,0 +1,14 @@
+node_modules/
+venv/
+__pycache__/
+*.pyc
+.env
+dist/
+.wrangler/
+.tanstack/
+bun.lock
+package-lock.json
+*.egg-info/
+.pytest_cache/
+commit_script.ps1
+sentinel_ai_explained.md
