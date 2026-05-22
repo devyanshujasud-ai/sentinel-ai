@@ -165,3 +165,22 @@ sentinel-ai/
    npm run dev
    ```
 3. Open `http://localhost:8080` in your web browser.
+
+
+## 📄 API Endpoint Reference
+
+All protected endpoints require your JWT auth token passed in the Authorization header: `Bearer <token>`.
+
+### Authentication
+* `POST /api/v1/auth/register` — Register a new account
+* `POST /api/v1/auth/login` — Sign in and receive a JWT token
+* `GET /api/v1/auth/profile` — Fetch active user account profile details
+
+### Threat Scanner
+* `POST /api/v1/scan` — Submit prompt payload for multi-signal analysis
+* `GET /api/v1/scan/{scan_id}` — Retrieve the detailed scan results for a specific scan ID
+
+### History & Telemetry
+* `GET /api/v1/history` — Get a paginated history list of recent scans
+* `GET /api/v1/analytics` — Pull aggregated safety telemetry for dashboard visual chart population
+* `GET /api/v1/threats` — Browse the catalog of recognized threat categories
