@@ -60,3 +60,17 @@ sequenceDiagram
         Gateway-->>User: Return Blocked warning + Sanitized prompt + Explanations
     end
 ```
+
+
+## 🛡️ The 8-Layer Prompt Firewall
+
+Sentinel AI deploys specialized, high-accuracy threat detectors running concurrently:
+
+1. **Prompt Injection Detector**: Catches directives aimed at ignoring or overriding initial LLM system boundary prompts (e.g., *"ignore previous instructions"*).
+2. **Jailbreak Detector**: Flags adversarial evasion formats designed to bypass safety policies (e.g., *"DAN mode"*, *"Do Anything Now"*).
+3. **SQL Injection (SQLi) Detector**: Prevents attempts to pass database queries through AI input fields (e.g., *"UNION SELECT"*).
+4. **Shell Command Detector**: Identifies bash or cmd instructions targeting target OS vulnerability scopes (e.g., *"`rm -rf /`"*).
+5. **PII & Data Leakage Detector**: Stops users from uploading protected formats, credential tokens, or private details (e.g., API keys, SSNs, credit cards).
+6. **Toxicity & Harassment Detector**: Screens out hate speech, explicit categories, and harassing remarks.
+7. **Unsafe Code Detector**: Identifies potentially malicious script blocks or execution directives (`eval()`, `exec()`).
+8. **Role Manipulation Detector**: Protects agent personas from hostile takeover attempts (e.g., *"You are now my hacker assistant"*).
