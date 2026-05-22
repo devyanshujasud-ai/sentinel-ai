@@ -184,3 +184,47 @@ All protected endpoints require your JWT auth token passed in the Authorization 
 * `GET /api/v1/history` — Get a paginated history list of recent scans
 * `GET /api/v1/analytics` — Pull aggregated safety telemetry for dashboard visual chart population
 * `GET /api/v1/threats` — Browse the catalog of recognized threat categories
+
+
+## 🏗️ Production Cloud Deployment
+
+### 1. Cloud Database Setup (MongoDB Atlas)
+1. Deploy a free cluster tier on [MongoDB Atlas](https://www.mongodb.com/cloud/atlas).
+2. Add a Database User with **Read/Write** access.
+3. Allow network connections from anywhere (`0.0.0.0/0`) under Network Access.
+4. Copy your connection string: `mongodb+srv://<username>:<password>@cluster0...`
+
+### 2. Backend API Deployment (Render)
+1. Connect your GitHub repository to [Render](https://render.com).
+2. Create a new **Web Service** with the root directory set to `backend`.
+3. Select **Python 3** environment and configure:
+   * **Build Command**: `pip install -r requirements.txt`
+   * **Start Command**: `uvicorn main:app --host 0.0.0.0 --port $PORT`
+4. Add your production environment variables (`MONGODB_URI`, `JWT_SECRET`, etc.).
+
+### 3. Frontend Deployment (Vercel)
+1. Import the project into [Vercel](https://vercel.com) and point it to the `ai-fortress-frontend` directory.
+2. Select the **Vite** preset.
+3. Add environment variables:
+   * `VITE_API_BASE_URL` = `https://your-backend.onrender.com/api/v1`
+4. Click **Deploy**.
+
+---
+
+## 🐳 Self-Host Deployment (Docker Compose)
+To launch the entire Sentinel AI infrastructure locally or on a VPS:
+```bash
+# Build and start container services in the background
+docker-compose up -d --build
+
+# View real-time logs for backend service
+docker-compose logs -f backend
+
+# Shut down container network
+docker-compose down -v
+```
+
+---
+
+## 🛡️ License & Contributions
+Distributed under the MIT License. See `LICENSE` for more information. Contributions are welcome! Feel free to open issues or submit pull requests.
