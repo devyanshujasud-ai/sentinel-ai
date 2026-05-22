@@ -1,0 +1,15 @@
+# Git & Environment
+.git
+.gitignore
+.env
+.env.example
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+.coverage
+htmlcov/
+venv/
+env/
+.antigravityignore
