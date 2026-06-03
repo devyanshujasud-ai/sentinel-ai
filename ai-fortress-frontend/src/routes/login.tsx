@@ -34,7 +34,7 @@ function Login() {
   return (
     <AuthShell
       title="Welcome back"
-      subtitle="Sign in to your Sentinel workspace"
+      subtitle="Sign in to your Rakshak AI workspace"
       footer={<>Don't have an account? <Link to="/register" className="text-primary hover:underline">Create one</Link></>}
     >
       <form onSubmit={handleSubmit} className="space-y-4">

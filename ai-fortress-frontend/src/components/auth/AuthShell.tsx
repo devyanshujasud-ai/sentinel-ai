@@ -19,7 +19,7 @@ export function AuthShell({
             <div className="mt-6 text-sm text-muted-foreground">{footer}</div>
           </div>
         </div>
-        <p className="text-[11px] text-muted-foreground">© 2026 Sentinel AI, Inc.</p>
+        <p className="text-[11px] text-muted-foreground">© 2026 Rakshak AI</p>
       </section>
       <section className="relative hidden lg:block overflow-hidden border-l border-border/60">
         <div className="absolute inset-0 grid-bg opacity-60" />

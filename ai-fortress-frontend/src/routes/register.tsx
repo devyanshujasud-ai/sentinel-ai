@@ -46,7 +46,7 @@ function Register() {
     <AuthShell
       title="Create your account"
       subtitle="Start scanning prompts in under five minutes"
-      footer={<>Already on Sentinel? <Link to="/login" className="text-primary hover:underline">Sign in</Link></>}
+      footer={<>Already on Rakshak AI? <Link to="/login" className="text-primary hover:underline">Sign in</Link></>}
     >
       <form onSubmit={handleSubmit} className="space-y-4">
         <OAuthRow />

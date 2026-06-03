@@ -38,6 +38,6 @@ class LoggingMiddleware(BaseHTTPMiddleware):
 
         # Add response headers
         response.headers["X-Response-Time"] = f"{duration_ms}ms"
-        response.headers["X-Powered-By"] = "Sentinel AI"
+        response.headers["X-Powered-By"] = "Rakshak AI"
 
         return response

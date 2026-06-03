@@ -10,7 +10,7 @@ export function Logo({ className, withText = true }: { className?: string; withT
       </div>
       {withText && (
         <div className="leading-tight">
-          <div className="text-sm font-semibold tracking-tight">Sentinel<span className="text-primary"> AI</span></div>
+          <div className="text-sm font-semibold tracking-tight">Rakshak<span className="text-primary"> AI</span></div>
           <div className="font-mono text-[10px] text-muted-foreground tracking-widest">SECURITY · v1.4</div>
         </div>
       )}

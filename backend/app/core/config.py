@@ -1,5 +1,5 @@
 """
-Sentinel AI — Application Configuration
+Rakshak AI — Application Configuration
 
 Loads all settings from environment variables using pydantic-settings.
 """
@@ -38,7 +38,7 @@ class Settings(BaseSettings):
     AI_PROVIDER: str = "auto"  # "auto", "openai", "gemini", "local"
 
     # Application Metadata
-    APP_NAME: str = "Sentinel AI"
+    APP_NAME: str = "Rakshak AI"
     APP_DESCRIPTION: str = "AI Prompt Security Gateway — Scan, detect, and neutralize prompt threats before they reach your LLMs."
     APP_VERSION: str = "1.0.0"
 

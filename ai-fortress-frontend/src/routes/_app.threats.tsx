@@ -134,7 +134,7 @@ function Threats() {
                   <div className="rounded-xl border border-border/60 bg-surface/40 p-4">
                     <p className="font-mono text-[10px] tracking-widest text-primary">MITIGATION STRATEGY</p>
                     <p className="mt-1 text-sm text-muted-foreground">
-                      Sentinel automatically filters detected segments and replaces them with a secure placeholder token. Ensure safe parsing and re-contextualization downstream.
+                      Rakshak AI automatically filters detected segments and replaces them with a secure placeholder token. Ensure safe parsing and re-contextualization downstream.
                     </p>
                   </div>
                   <div className="rounded-xl border border-border/60 bg-surface/40 p-4">

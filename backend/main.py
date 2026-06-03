@@ -1,6 +1,6 @@
 """
 ╔══════════════════════════════════════════════════════════════╗
-║                     SENTINEL AI                              ║
+║                     RAKSHAK AI                               ║
 ║          AI Prompt Security Gateway — Backend API            ║
 ║                                                              ║
 ║  Scan, detect, and neutralize prompt threats before          ║
@@ -51,17 +51,17 @@ settings = get_settings()
 async def lifespan(app: FastAPI):
     """Startup and shutdown lifecycle events."""
     # Startup
-    logger.info("Starting Sentinel AI v%s ...", settings.APP_VERSION)
+    logger.info("Starting Rakshak AI v%s ...", settings.APP_VERSION)
     await connect_db()
     await seed_threats()
-    logger.info("Sentinel AI is ready. Environment: %s", settings.APP_ENV)
+    logger.info("Rakshak AI is ready. Environment: %s", settings.APP_ENV)
 
     yield
 
     # Shutdown
-    logger.info("Shutting down Sentinel AI ...")
+    logger.info("Shutting down Rakshak AI ...")
     await close_db()
-    logger.info("Sentinel AI stopped.")
+    logger.info("Rakshak AI stopped.")
 
 
 # ---------------------------------------------------------------------------

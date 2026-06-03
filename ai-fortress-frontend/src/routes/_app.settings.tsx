@@ -128,7 +128,7 @@ function ThemeCard() {
   const [a, setA] = useState(0);
   return (
     <Card title="Appearance" eyebrow="THEME">
-      <p className="text-xs text-muted-foreground">Sentinel is dark-mode native. Choose an accent for charts and CTAs.</p>
+      <p className="text-xs text-muted-foreground">Rakshak AI is dark-mode native. Choose an accent for charts and CTAs.</p>
       <div className="mt-3 grid grid-cols-4 gap-2">
         {accents.map((ac, i) => (
           <button key={ac.n} onClick={() => setA(i)} className={`rounded-lg border p-3 text-left ${a === i ? "border-primary/40 bg-primary/10" : "border-border/60 bg-surface/40 hover:bg-surface-2/40"}`}>
@@ -149,7 +149,7 @@ function ApiKeysCard() {
   const { user } = useAuth();
   const [show, setShow] = useState(false);
   const keys = [
-    { n: "Production Gateway Key", k: "sk_live_sentinel_gateway_key_" + (user?.id || "default"), c: user?.created_at ? new Date(user.created_at).toLocaleDateString() : "Today" },
+    { n: "Production Gateway Key", k: "sk_live_rakshak_gateway_key_" + (user?.id || "default"), c: user?.created_at ? new Date(user.created_at).toLocaleDateString() : "Today" },
   ];
   return (
     <Card title="API credentials" eyebrow="SECURITY" className="xl:col-span-3">

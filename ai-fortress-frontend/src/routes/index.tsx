@@ -27,7 +27,7 @@ import { Logo } from "@/components/brand/Logo";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Sentinel AI — Secure your AI systems against prompt attacks" },
+      { title: "Rakshak AI — Secure your AI systems against prompt attacks" },
       { name: "description", content: "Real-time prompt injection, jailbreak, and data-exfil detection for production LLM applications." },
     ],
   }),
@@ -102,7 +102,7 @@ function Hero() {
           <span className="text-gradient">prompt attacks.</span>
         </h1>
         <p className="mt-5 text-lg text-muted-foreground max-w-2xl">
-          Sentinel AI is the runtime security layer for LLM applications. Detect prompt
+          Rakshak AI is the runtime security layer for LLM applications. Detect prompt
           injection, jailbreaks, data-exfiltration, and policy violations in real time —
           with millisecond-level latency.
         </p>
@@ -143,11 +143,11 @@ function TerminalCard() {
         <span className="h-2.5 w-2.5 rounded-full bg-destructive/70" />
         <span className="h-2.5 w-2.5 rounded-full bg-warning/70" />
         <span className="h-2.5 w-2.5 rounded-full bg-success/70" />
-        <p className="ml-3 font-mono text-[11px] text-muted-foreground">sentinel-cli · prompt-firewall</p>
+        <p className="ml-3 font-mono text-[11px] text-muted-foreground">rakshak-cli · prompt-firewall</p>
       </div>
       <div className="relative p-5 font-mono text-[12.5px] leading-relaxed">
         <div className="absolute inset-0 scanline" />
-        <Line c="text-muted-foreground">$ sentinel scan --input ./prompt.txt</Line>
+        <Line c="text-muted-foreground">$ rakshak scan --input ./prompt.txt</Line>
         <Line c="text-primary">→ initializing threat models (12 detectors)…</Line>
         <Line c="text-muted-foreground">  ✓ injection-v3.2  ✓ jailbreak-v2.8  ✓ pii-extract-v1.4</Line>
         <Line c="text-warning">⚠ classification: PROMPT_INJECTION (confidence 0.94)</Line>
@@ -244,7 +244,7 @@ function DemoPreview() {
           <span className="h-2.5 w-2.5 rounded-full bg-destructive/70" />
           <span className="h-2.5 w-2.5 rounded-full bg-warning/70" />
           <span className="h-2.5 w-2.5 rounded-full bg-success/70" />
-          <p className="ml-3 text-xs text-muted-foreground">app.sentinel.ai/dashboard</p>
+          <p className="ml-3 text-xs text-muted-foreground">app.rakshak.ai/dashboard</p>
         </div>
         <div className="grid grid-cols-12 gap-0">
           <div className="col-span-3 hidden md:block border-r border-border/60 bg-surface/30 p-4 text-xs">
@@ -349,7 +349,7 @@ function Stats() {
 function ArchitectureSection() {
   const nodes = [
     { t: "Client app", d: "user prompt" },
-    { t: "Sentinel Gateway", d: "12 detectors · policy engine" },
+    { t: "Rakshak Gateway", d: "12 detectors · policy engine" },
     { t: "LLM provider", d: "OpenAI · Anthropic · self-host" },
     { t: "Response Inspector", d: "PII · data-exfil · policy" },
   ];
@@ -388,7 +388,7 @@ function ArchitectureSection() {
 
 function Testimonials() {
   const items = [
-    { q: "We rolled Sentinel out across 14 LLM-powered features in a weekend. Block rate on prompt injection went from 38% to 99.6%.", a: "Mara Chen", r: "Head of Platform, Northwind" },
+    { q: "We rolled Rakshak AI out across 14 LLM-powered features in a weekend. Block rate on prompt injection went from 38% to 99.6%.", a: "Mara Chen", r: "Head of Platform, Northwind" },
     { q: "The explainability layer alone is worth it. Our security team can finally audit every model decision.", a: "Daniel Roth", r: "CISO, Helios" },
     { q: "Sub-10ms overhead at 8K RPS. No other product even came close in our bake-off.", a: "Priya Anand", r: "Staff Eng, Vertex" },
   ];
@@ -465,7 +465,7 @@ function CTA() {
         <div className="absolute inset-0 grid-bg opacity-50" />
         <div className="relative">
           <h3 className="text-3xl md:text-4xl font-semibold tracking-tight">Ship AI without the attack surface.</h3>
-          <p className="mt-3 text-muted-foreground">Deploy Sentinel in front of any LLM in under five minutes.</p>
+          <p className="mt-3 text-muted-foreground">Deploy Rakshak AI in front of any LLM in under five minutes.</p>
           <div className="mt-6 flex flex-wrap justify-center gap-3">
             <Link to="/register" className="inline-flex items-center gap-2 rounded-md bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground hover:opacity-90 transition glow-primary">
               Get started <ArrowRight className="h-4 w-4" />
@@ -506,7 +506,7 @@ function Footer() {
         ))}
       </div>
       <div className="mt-10 pt-6 border-t border-border/60 flex flex-wrap items-center gap-4">
-        <p className="text-xs text-muted-foreground">© 2026 Sentinel AI, Inc.</p>
+        <p className="text-xs text-muted-foreground">© 2026 Rakshak AI</p>
         <div className="ml-auto flex items-center gap-3 text-muted-foreground">
           <a href="#" aria-label="GitHub" className="hover:text-foreground"><Github className="h-4 w-4" /></a>
           <a href="#" aria-label="Twitter" className="hover:text-foreground"><Twitter className="h-4 w-4" /></a>

@@ -57,10 +57,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Sentinel AI — Secure your AI systems against prompt attacks" },
-      { name: "description", content: "Sentinel AI scans, detects, and neutralizes prompt injection, jailbreaks, and data-exfil attacks against your LLM applications." },
+      { title: "Rakshak AI — Secure your AI systems against prompt attacks" },
+      { name: "description", content: "Rakshak AI scans, detects, and neutralizes prompt injection, jailbreaks, and data-exfil attacks against your LLM applications." },
       { name: "theme-color", content: "#0b1018" },
-      { property: "og:title", content: "Sentinel AI — AI Security Platform" },
+      { property: "og:title", content: "Rakshak AI — AI Security Platform" },
       { property: "og:description", content: "Real-time prompt threat detection for LLM applications." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
