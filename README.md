@@ -10,7 +10,7 @@
 
 ### Scan, detect, and neutralize prompt threats in real-time before they reach your LLMs (ChatGPT, Claude, Gemini).
 
-Sentinel AI is a high-performance, enterprise-grade **Prompt Firewall & Threat Detection Gateway**. It acts as a security middleware sitting between your users and your Large Language Models (LLMs), identifying prompt injection, jailbreaks, data leakage, and system manipulation within milliseconds.
+Rakshak AI is a high-performance, enterprise-grade **Prompt Firewall & Threat Detection Gateway**. It acts as a security middleware sitting between your users and your Large Language Models (LLMs), identifying prompt injection, jailbreaks, data leakage, and system manipulation within milliseconds.
 
 
 ## 🌟 Key Features
@@ -64,7 +64,7 @@ sequenceDiagram
 
 ## 🛡️ The 8-Layer Prompt Firewall
 
-Sentinel AI deploys specialized, high-accuracy threat detectors running concurrently:
+Rakshak AI deploys specialized, high-accuracy threat detectors running concurrently:
 
 1. **Prompt Injection Detector**: Catches directives aimed at ignoring or overriding initial LLM system boundary prompts (e.g., *"ignore previous instructions"*).
 2. **Jailbreak Detector**: Flags adversarial evasion formats designed to bypass safety policies (e.g., *"DAN mode"*, *"Do Anything Now"*).
@@ -97,7 +97,7 @@ Sentinel AI deploys specialized, high-accuracy threat detectors running concurre
 ## 📁 Repository Directory Structure
 
 ```
-sentinel-ai/
+Rakshak-ai/
 ├── backend/                   # 🐍 FastAPI Backend API
 │   ├── app/
 │   │   ├── api/               # API Router and endpoint route handlers
