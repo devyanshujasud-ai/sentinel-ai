@@ -1,4 +1,4 @@
-# 🛡️ Sentinel AI — AI Prompt Security Gateway
+# 🛡️ Rakshak AI — AI Prompt Security Gateway
 
 <p align="center">
   <img src="https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white" alt="FastAPI" />
