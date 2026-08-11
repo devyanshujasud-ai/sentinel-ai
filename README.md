@@ -111,7 +111,7 @@ Rakshak-ai/
 │   ├── main.py                # Server entrypoint
 │   └── requirements.txt       # Python dependencies list
 │
-├── ai-fortress-frontend/     # ⚛️ React & Tailwind Dashboard
+├── ai-fortress-frontend/     # React & Tailwind Dashboard
 │   ├── src/
 │   │   ├── components/        # UI and App specific layout blocks
 │   │   ├── hooks/             # Custom utility hooks (useMobile)
